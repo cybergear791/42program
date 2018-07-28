@@ -1,0 +1,7 @@
+Credentials cache: API:36330
+        Principal: nflouty@42.US.ORG
+
+  Issued                Expires               Principal
+Jul 24 18:39:24 2018  Jul 25 04:39:24 2018  krbtgt/42.US.ORG@42.US.ORG
+Jul 24 18:39:27 2018  Jul 25 04:39:24 2018  ldap/ldap-proxy.42.us.org@42.US.ORG
+Jul 24 18:48:21 2018  Jul 25 04:39:24 2018  ldap/ldap-master.42.us.org@42.US.ORG
