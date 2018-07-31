@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/28 19:13:51 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 19:48:51 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	if (!n)
+		return (0);
+	while ((*s1 && (*s1 == *s2)) && --n)
 	{
-		count++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		spl += 1;
+		s2 += 1;
 	}
-	printf("%d digits",count);
-
-}
-
-int main()
-{
-	char str[9] = "fuck dis";
-
-	ft_strlen(str);
+	return (*us1 - *us2);
 }

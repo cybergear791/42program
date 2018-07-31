@@ -6,7 +6,7 @@
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/27 23:36:36 by nflouty          ###   ########.fr       */
+/*   Updated: 2018/07/28 13:26:06 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrev(char *str)
 {
 //	printf("Your favorite word reversed is ");
 
-	char *str2;
+	char str2;
 
 	for(int i = 1; i < strlen(str) ; i++)
 	{

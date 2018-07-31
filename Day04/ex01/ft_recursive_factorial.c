@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 19:28:50 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/26 19:36:47 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-
-void	ft_strlen(char *str)
+int ft_recursive_factorial(int nb)
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	if(nb > 1)
 	{
-		count++;
+		nb*= ft_recursive_factorial(nb-1);	
 	}
-	printf("%d digits",count);
-
+	return nb;
 }
+
 
 int main()
 {
-	char str[9] = "fuck dis";
+	int input = 6;
+	input = ft_recursive_factorial(input);
+	printf("6! is %d",input);
 
-	ft_strlen(str);
 }

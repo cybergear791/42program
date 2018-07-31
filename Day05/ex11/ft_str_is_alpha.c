@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/29 18:22:47 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/29 19:07:24 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+int		ft_str_is_alpha(char *str)
 {
+	int i;
+	int check;
 
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	i = 0;
+	check = 0;
+	while (str[i] != '\0')
 	{
-		count++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			check++;
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			check++;
+		i++;
 	}
-	printf("%d digits",count);
-
-}
-
-int main()
-{
-	char str[9] = "fuck dis";
-
-	ft_strlen(str);
+	if (i == check)
+		return (1);
+	else
+		return (0);
 }

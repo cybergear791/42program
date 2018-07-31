@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/30 11:11:33 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/30 11:40:05 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
+	unsigned	int i;
+	unsigned	int j;
 
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
+	j = 0;
+	while (src[j] != '\0' && j < size)
 	{
-		count++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	printf("%d digits",count);
-
-}
-
-int main()
-{
-	char str[9] = "fuck dis";
-
-	ft_strlen(str);
+	dest[i + j] = '\0';
+	i = 0;
+	while (src[i])
+		i++;
+	return (i);
 }

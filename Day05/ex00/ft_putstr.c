@@ -5,32 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/28 11:18:43 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 11:39:48 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-
-void	ft_strlen(char *str)
+int		ft_putchar(char c)
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
-	{
-		count++;
-	}
-	printf("%d digits",count);
-
+	write(1, &c, 1);
+	return (0);
 }
 
-int main()
+void	ft_putstr(char *str)
 {
-	char str[9] = "fuck dis";
+	int	i;
 
-	ft_strlen(str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

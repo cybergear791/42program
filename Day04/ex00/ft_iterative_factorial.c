@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 19:20:54 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 16:21:43 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-
-void	ft_strlen(char *str)
+int 	ft_iterative_factorial(int nb)
 {
+	if (nb > 12)
+		return (0);
 
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
-	{
-		count++;
-	}
-	printf("%d digits",count);
+	int output = 1;
 
+	while(nb > 1)
+	{	
+		output *= nb;	
+		nb--;
+	}	
+	return output;
 }
+
 
 int main()
 {
-	char str[9] = "fuck dis";
+	int input = 13;
+	input = ft_iterative_factorial(input);
+	printf("13! is %d\n",input);
 
-	ft_strlen(str);
+	int input2 = 5;
+	input2 = ft_iterative_factorial(input2);
+	printf("5! is %d",input2);
+
 }

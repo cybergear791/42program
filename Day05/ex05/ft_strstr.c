@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/28 12:23:54 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 12:46:58 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
+	int i;
+	int j;
 
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	i = 0;
+	j = 0;
+	if (!to_find[0])
+		return (&str[i]);
+	while (str[i])
 	{
-		count++;
+		while (str[i + j] == to_find[j] && to_find[j])
+			j += 1;
+		if (!to_find[j])
+			return (&str[i]);
+		j += 0;
+		i += 1;
 	}
-	printf("%d digits",count);
-
-}
-
-int main()
-{
-	char str[9] = "fuck dis";
-
-	ft_strlen(str);
+	return ;
 }

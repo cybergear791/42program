@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 19:51:48 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 17:26:17 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+int ft_recursive_power(int nb, int power){
 
-
-void	ft_strlen(char *str)
-{
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	if(power>1)
 	{
-		count++;
+		nb*=ft_recursive_power(nb,power-1);
 	}
-	printf("%d digits",count);
-
+	return nb;
 }
 
-int main()
-{
-	char str[9] = "fuck dis";
 
-	ft_strlen(str);
+
+
+int main() {
+
+int nb =5;
+int power = 3;
+int result = ft_recursive_power(nb,power);
+printf("5^3 = %d",result);
 }

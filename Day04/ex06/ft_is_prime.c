@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 21:20:46 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/27 11:26:49 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+int ft_is_prime(int nb)
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
-	{
-		count++;
-	}
-	printf("%d digits",count);
-
+	for(int num = 2; num < nb; num++)
+		for(int j = 2; j < nb;j++)
+			if(j * num == nb) 	//if nb can be multiplied into by two numbers
+				return 0; //not prime
+	return 1;//if the program cant find two numbers to multiply into nb then nb is prime 
 }
 
-int main()
+int main() 
 {
-	char str[9] = "fuck dis";
-
-	ft_strlen(str);
+	printf("%d",ft_is_prime(11));
 }

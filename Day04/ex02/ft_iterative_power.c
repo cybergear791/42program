@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 19:40:01 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 17:15:07 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-void	ft_strlen(char *str)
+int ft_iterative_power(int nb, int power)
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
+	int num = nb;
+	for(int i =1; i < power; i++)
 	{
-		count++;
+		nb*=num;
 	}
-	printf("%d digits",count);
-
+	return nb;
 }
 
-int main()
-{
-	char str[9] = "fuck dis";
+int main() {
 
-	ft_strlen(str);
+int nb =5;
+int power = 3;
+int result = ft_iterative_power(nb,power);
+printf("5^3 = %d",result);
 }

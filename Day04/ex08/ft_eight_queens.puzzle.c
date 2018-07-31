@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_eight_queens.puzzle.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/27 14:54:34 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/27 16:55:23 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-
-void	ft_strlen(char *str)
+bool isValidPos(int board[w][h],int Pos[w][h])
 {
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
-	{
-		count++;
-	}
-	printf("%d digits",count);
+	for(int i = 0; i < w; i++)
+		for(int j = 0;j < h; j++)
+		{
+			if(P[w] == 
+		
+		}
 
 }
 
-int main()
+int ft_eight_queens_puzzle(void)
 {
-	char str[9] = "fuck dis";
+	int poss = 0;
 
-	ft_strlen(str);
+	int board[8][8];
+
+	
+
+	return poss+=ft_eight_queens_puzzle();
 }

@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonaci.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/26 13:58:00 by nflouty           #+#    #+#             */
-/*   Updated: 2018/07/28 16:37:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/07/26 20:02:00 by nflouty           #+#    #+#             */
+/*   Updated: 2018/07/28 19:23:24 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+int ft_fibonacci(int index){
 
-
-void	ft_strlen(char *str)
-{
-
-	printf("Your favorite  word has ");
-	int count = 0;
-	for(int i = 0; i < strlen(str); i++)
-	{
-		count++;
-	}
-	printf("%d digits",count);
-
+	if(index < 0)
+		return -1;
+	else if(index <= 1)
+		return index;
+	return ft_fibonacci(index-1) + ft_fibonacci(index-2);
 }
 
-int main()
-{
-	char str[9] = "fuck dis";
+int main(){
 
-	ft_strlen(str);
+int index = 6;
+printf("%d",ft_fibonacci(index));
 }
