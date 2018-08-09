@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   match.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/07 11:12:12 by nflouty           #+#    #+#             */
-/*   Updated: 2018/08/08 10:32:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/08/03 12:23:33 by nflouty           #+#    #+#             */
+/*   Updated: 2018/08/05 15:45:24 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_list.h"
-
-
-t_list		*ft_create_elem(void *data)
+int		match(char *s1, char *s2)
 {
-	t_list	*list;
-
-	list = malloc(sizeof(t_list));
-	if (list)
+	if (*s1 != '\0' && *s2 == '*')
 	{
-		list->data = data;
-		list->next = NULL;
+		return (match(s1 + 1, s2) || match(s1, s2 + 1));
 	}
-	return (list);
+	if (*s1 == '\0' && *s2 == '*')
+	{
+		return (match(s1, s2 + 1));
+	}
+	if (*s1 == *s2 && *s1 != '\0' && *s2 != '\0')
+	{
+		return (match(s1 + 1, s2 + 1));
+	}
+	if (*s1 == *s2 && *s1 == '\0' && *s2 == '\0')
+	{
+		return (1);
+	}
+	return (0);
 }

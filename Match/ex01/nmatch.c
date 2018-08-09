@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   nmatch.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nflouty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/07 11:12:12 by nflouty           #+#    #+#             */
-/*   Updated: 2018/08/08 10:32:45 by nflouty          ###   ########.fr       */
+/*   Created: 2018/08/03 12:26:52 by nflouty           #+#    #+#             */
+/*   Updated: 2018/08/05 15:47:02 by nflouty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_list.h"
-
-
-t_list		*ft_create_elem(void *data)
+int		nmatch(char *s1, char *s2)
 {
-	t_list	*list;
-
-	list = malloc(sizeof(t_list));
-	if (list)
+	if (!*s1 && !*s2)
 	{
-		list->data = data;
-		list->next = NULL;
+		return (1);
 	}
-	return (list);
+	else if (*s2 == '*')
+	{
+		if (!*s1)
+		{
+			return (nmatch(s1, s2 + 1));
+		}
+		else
+		{
+			return (nmatch(s1 + 1, s2) + nmatch(s1, s2 + 1));
+		}
+	}
+	else if (*s1 == *s2)
+	{
+		return (nmatch(s1 + 1, s2 + 1));
+	}
+	else
+		return (0);
 }
